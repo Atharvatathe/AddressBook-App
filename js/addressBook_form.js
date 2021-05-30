@@ -1,3 +1,4 @@
+//UC 5
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
    
@@ -67,6 +68,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+//UC6
 const save = () => {
     try{
         let addressBookData = createAddressBook();
@@ -117,5 +119,20 @@ const createEmployeePayroll = () => {
 const getInputValueById = (id) => {
     let value = document.querySelector(id).value;
     return value;
+}
+
+//UC 8
+
+function createAndUpdateStorage(addressBookData){
+
+    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
+
+    if(addressBookList != undefined){
+        addressBookList.push(addressBookData);
+    } else{
+        addressBookList = [addressBookData]
+    }
+    alert(addressBookList.toString());
+    localStorage.setItem("AddressBookList",JSON.stringify(addressBookList))
 }
 

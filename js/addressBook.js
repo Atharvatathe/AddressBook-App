@@ -23,7 +23,7 @@ class AddressBook{
   //getter and setter for Phone Number
   get phone(){return this._phone;}
   set phone(phone){
-    let phoneRegex = RegExp('^[+]{1}[0-9]{2}[\\s][789]{1}[0-9]{9}$');
+    let phoneRegex = RegExp('^[0-9]{2}[\\s][789]{1}[0-9]{9}$');
     if(phoneRegex.test(phone))
           this._phone = phone;
     else throw 'Phone Number is not Invalid';      
@@ -35,6 +35,10 @@ class AddressBook{
 
   set zip(zip){
     this._zip = zip;
+  }
+
+  toString(){
+    return "Name: " +this.name+ ", Address: "+this.address+ ", phone Number: "+this.phone+ ", Zop_code: "+this.zip;
   }
 
 }

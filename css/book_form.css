@@ -172,3 +172,11 @@ label{
     margin-bottom: 10px;
 }
 
+/*UC 4 */
+error-output{
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+}
+

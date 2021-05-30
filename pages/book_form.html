@@ -22,14 +22,61 @@
   </header>
   <!--UC 2-->
   <div class = "form-content">
-    <div class = "form">
+    <div class = "form-header">
       <dic class= "top">
         <div class ="form-head">Person Address form</div>
         <div class = "push"><a href="/pages/book_form.html"><img src="/assets/cancel.svg" alt=""></a></div>
       </div>
     </div>
   </div>
+  <!--UC 3-->
+  <div class="form">
+    <form class="form-input" action="#" onreset="resetForm()" onsubmit="save()">
+    <div class="row-content">
+        <label class="label-text" for="name">Full Name</label>
+        <input class="input" type="text" id="name" name="name" placeholder="Your name..." required>
+        <error-output class="text-error" for="text"></error-output>
+    </div>
+    <div class="row-content">
+        <label class="label-text" for="phone">Phone Number</label>
+        <input class="input" type="text" id="phone" name="phone" placeholder="" required>
+        <error-output class="text-error" for="text"></error-output>
+    </div>
+    <div class="row-content">
+        <label class="label-text" for="address">Address</label>
+        <input class="input-address" type="text" id="address" name="address" placeholder="" required>
+    </div>
+    <div class="row-select">
+        <div class="Select-option">
+            <label class="label-text" for="city">City</label>
+            <select class="select-text" id="city" name="city">
+                <option value="" selected disabled hidden>Select City</option>
+                <option value="1">Pune</option>
+                <option value="2">Mumbai</option>
+                <option value="3">Chennai</option>
+                <option value="4">Bangluru</option>
+                <option value="5">Hyderabad</option>
+                <option value="6"></option>
+            </select>
+        </div>
 
-    
+        <div class="Select-option">
+            <label class="label-text" for="state">State</label>
+            <select class="select-text" id="state`" name="state">
+                <option value="" selected disabled hidden>Select State</option>
+                <option value="1">Maharashtra</option>
+                <option value="2">TamilNadu</option>
+                <option value="3">Karnatak</option>
+                <option value="4">Telangana</option>
+                <option value="5">Andhra</option>
+            </select>
+        </div>
+
+        <div class="Select-option">
+            <label class="label-text" for="zip">Zip Code</label>
+            <input class="input" type="text" id="zip" name="zip" placeholder="" required>
+        </div>
+    </div>
+  </div>
 </body>
 </html>

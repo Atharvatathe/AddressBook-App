@@ -39,12 +39,12 @@ class AddressBook{
             this._zip = zip; 
         else throw 'Wrong Zip Code';
   }
-
+  //getter and setter for Zip code
   get city(){ return this._city; }
   set city(city){
       this._city=city;
   }
-  
+  //getter and setter for Zip code
   get state(){ return this._state; }
   set state(state){
       this._state=state;

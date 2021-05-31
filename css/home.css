@@ -1,3 +1,4 @@
+/* UC-10 */
 body{
     margin: 0;
     height: 100%;
@@ -15,7 +16,7 @@ body{
     align-items: center;
     border: 0px solid #008CFF;
 }
-/* UC-10 */
+
 .logo-content{
     display: flex;
     flex-direction: row;
@@ -47,7 +48,7 @@ body{
     box-sizing: border-box;
 }
 
-/*UC11*/
+/* UC-11 */
 .add-button{
     font: normal normal normal 22px/29px Roboto;
     letter-spacing: 0px;
@@ -98,53 +99,59 @@ body{
     display: inline-block;
 }
 
-/*UC12*/
-
-.table-main {
+/* UC-12 */
+.table-main{
     width: 80%;
     margin: 0 auto;
     overflow: auto;
 }
-.table {
+
+.table{
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 15px;
     min-width: 800px;
 }
-.td,th{
+
+td, th{
     text-align: left;
     padding: 5px 8px;
-    border: 1px solid #dddddd;
 }
-th {
-    background: #F7F7F7 0% 0% no-repeat padding-box;
-    border-radius: 3px 3px 0px 0px;
+
+th{
+    background: 0% 0% no-repeat padding-box;
+    /* border-radius: 3px 3px 0px 8px; */
     text-align: left;
-    font: normal normal medium 18px/24px Lato;
+    font: normal normal bold 15px/20px Lato;
     letter-spacing: 0px;
     color: #658292;
-    text-transform: Titlecase;
+    text-transform: capitalize;
     opacity: 1;
-    border: 3px;
+    border: 0px solid #dddddd;
 }
-tr:not(:first-child) {
+
+tr:not(:first-child){
     background: #ffffff 0% 0% no-repeat padding-box;
     border: 1px solid #e3e3e3;
     border-radius: 3px;
 }
-td {
-    font: normal normal normal 14px/21px Roboto;
+
+td{
+    font: normal normal normal 14px/21px Lato;
     letter-spacing: 0px;
     color: #3d3d3d;
     opacity: 1;
 }
-td:first-child {
+
+td:first-child{
     display: flex;
     align-items: center;
 }
-td img:first-child {
-    margin-left: 10px;
+
+td:img:first-child{
+    margin-right: 10px;
 }
-td img {
+
+td img{
     cursor: pointer;
 }

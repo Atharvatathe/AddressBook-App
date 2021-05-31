@@ -1,93 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!--UC1-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://fontd.googleapis.com/css2?family=Robot:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/book_form.css">
-    <title>Address Book Foem</title>
-    <script defer src="../js/addressBook_form.js"></script>
-    <script defer src="../js/addressBook.js"></script>
-
+    <link rel = "shortcut icon" href = "/assets/addressBook.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/book_form.css">
+    <title>Add Person</title>
 </head>
+
 <body>
-  <!-- Uc 1 -->
-  <header class = "header-content header">
-    <div class = "logo-content">
-      <img src="../assets/addressBook.png" alt="">
-        <div>
-          <span class="add-text">ADDRESS</span><br>
-          <span class="add-text add-book">BOOK</span>
+    <!-- UC-1 -->
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="/assets/addressBook.png" alt="">
+            <div>
+                <span class="add-text">ADDRESS</span><br>
+                <span class="add-text add-book">BOOK</span>
+            </div>
+        </div>
+    </header>
+    <!-- UC-2 -->
+    <div class="form-content">
+        <div class="content">
+            <div class="top">
+                <div class="box">PERSON ADDRESS FORM</div>
+                <div class="push"><a href="/pages/home.html"><img src="/assets/cancel.svg" alt=""></a></div>
+            </div>
         </div>
     </div>
-  </header>
-  <!--UC 2-->
-  <div class = "form-content">
-    <div class = "form-header">
-      <dic class= "top">
-        <div class ="form-head">Person Address form</div>
-        <div class = "push"><a href="/pages/book_form.html"><img src="/assets/cancel.svg" alt=""></a></div>
-      </div>
-    </div>
-  </div>
-  <!--UC 3-->
-  <div id="formId" class="form">
-    <form class="form-input" action="#" onreset="resetForm()" onsubmit="save(event);return false">
-    <div class="row-content">
-        <label class="label-text" for="name">Full Name</label>
-        <input class="input" type="text" id="name" name="name" placeholder="Your name..." required>
-        <error-output class="text-error" for="text"></error-output>
-    </div>
-    <div class="row-content">
-        <label class="label-text" for="phone">Phone Number</label>
-        <input class="input" type="text" id="phone" name="phone" placeholder="" required>
-        <error-output class="text-error" for="text"></error-output>
-    </div>
-    <div class="row-content">
-        <label class="label-text" for="address">Address</label>
-        <input class="input-address" type="text" id="address" name="address" placeholder="Address.." required>
-        <error-output class="text-error" for="text"></error-output>
-    </div>
-    <div class="row-select">
-        <div class="Select-option">
-            <label class="label-text" for="city">City</label>
-            <select class="select-text" id="city" name="city">
-                <option value="" selected disabled hidden>Select City</option>
-                <option value="1">Pune</option>
-                <option value="2">Mumbai</option>
-                <option value="3">Chennai</option>
-                <option value="4">Bangluru</option>
-                <option value="5">Hyderabad</option>
-                <option value="6"></option>
-            </select>
-        </div>
+    <!-- UC-3 -->
+    <div class="form">
+        <form class="form-input" action="#" onreset="resetForm()" onsubmit="save()">
+            <div class="row-content">
+                <label class="label-text" for="name">Full Name</label>
+                <input class="input" type="text" id="name" name="name" placeholder="Your name..." required>
+                <error-output class="text-error" for="text"></error-output>
+            </div>
+            <div class="row-content">
+                <label class="label-text" for="phone">Phone Number</label>
+                <input class="input" type="text" id="phone" name="phone" placeholder="" required>
+                <error-output class="phone-error" for="text"></error-output>
+            </div>
+            <div class="row-content">
+                <label class="label-text" for="address">Address</label>
+                <input class="input-address" type="text" id="address" name="address" placeholder="" required>
+                <error-output class="add-error" for="text"></error-output>
+            </div>
+            <div class="row-content-select">
+                <div class="place">
+                    <label class="label-text" for="city">City</label>
+                    <select class="select" id="city" name="city">
+                        <option value="" selected disabled hidden>Select City</option>
+                        <option value="Bhopal">Pune</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Kolkata">Hyderabad</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Pune">Bangluru</option>
+                    </select>
+                </div>
 
-        <div class="Select-option">
-            <label class="label-text" for="state">State</label>
-            <select class="select-text" id="state`" name="state">
-                <option value="" selected disabled hidden>Select State</option>
-                <option value="1">Maharashtra</option>
-                <option value="2">TamilNadu</option>
-                <option value="3">Karnatak</option>
-                <option value="4">Telangana</option>
-                <option value="5">Andhra</option>
-            </select>
-        </div>
+                <div class="place">
+                    <label class="label-text" for="state">State</label>
+                    <select class="select" id="state" name="state">
+                        <option value="" selected disabled hidden>Select State</option>
+                        <option value="Madhya Pradesh">Telangana</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Tamilnadu">Karnataka</option>
+                    </select>
+                </div>
 
-        <div class="Select-option">
-            <label class="label-text" for="zip">Zip Code</label>
-            <input class="input" type="text" id="zip" name="zip" placeholder="" required>
-            <error-output class="text-error" for="text"></error-output>
-        </div>
-    </div>
-    <!--UC 5 add Buttons-->
-    <div class="buttonParent">
-      <div class="submit-reset">
-        <button type="submit" class="button submitButton" id="submitButton">Add</button>
-        <button type="reset" class="resetButton button" id="resetButton">Reset</button>
-      </div>	
+                <div class="place">
+                    <label class="label-text" for="zip">Zip-Code</label>
+                    <input class="input" type="text" id="zip" name="zip" placeholder="" required>
+                    <error-output class="zip-error" for="text"></error-output>
+                </div>
+            </div>
+       <!-- UC-5 -->
+            <div class="buttonParent">
+                <div class="submit-reset">
+                    <button type="reset" class="resetButton button">Reset</button>
+                    <a href="/pages/home.html"><button type="submit" class="button submitButton" id="submitButton">Add</button></a>
+                </div>
+            </div>
     </div>
     </form>
-  </div>
+    </div>
+    <script defer src="../js/AddressBook.js"></script>
+    <script defer src="../js/addressBook_form.js"></script>
+
 </body>
+
 </html>

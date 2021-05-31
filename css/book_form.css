@@ -1,59 +1,64 @@
+/* UC-1 */
 body{
     margin: 0;
     height: 100%;
-    
 }
-.header{
-    padding: 0px;
-    background-color: #ffffff;
 
+.header{
+    padding: 15px 0;
+    background-color: #ffffff;
 }
 
 .header-content{
-
     display: flex;
-    background-color: #ffffff;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    border: 0px solid #008CFF;
 }
 
 .logo-content{
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 0px solid #008CFF ;
+    border: 0px solid #008CFF;
     width: 80%;
-    
 }
 
-.logo-content-img{ 
+.logo-content > img {
+    width: 50px;
+    height: auto;
+    padding-left: 4px;
     border: solid 0px #42515f;
 }
-.add-text{
-    font: normal normal bold 20px/25px Montserrat;
-    font-family: "Montserrat",sans-serif;
+
+.add-text {
+    font: normal normal bold 20px/25px Monteserrat;
+    font-family: "Monteserrat", sans-serif;
     letter-spacing: 0px;
     color: #008CFF;
     text-transform: capitalize;
 }
 
 .add-book{
-    color: #42515f;
+    color: black;
 }
 
-*{box-sizing: border-box;}
+*{
+    box-sizing: border-box;
+}
 
-/* UC2 */
-.form-content {
+/* UC-2 */
+.form-content{
     min-height: calc(100% - 80px);
-    background-color: #ffffff;
+    background-color: #f7f7f7;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0px solid #008CFF;
 }
-.form-header {
+
+.content{
     width: 50%;
     padding: 15px 60px;
     background: #008CFF 0% 0% no-repeat padding-box;
@@ -63,18 +68,6 @@ body{
     align-items: center;
 }
 
-.form-head {
-    left: 427px;
-    width: 1067px;
-    top: 173px;
-    text-align: center;
-    font: normal normal normal 20px/28px Roboto;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    opacity: 1;
-}
-
 .top{
     display: flex;
     flex-direction: row;
@@ -82,14 +75,23 @@ body{
     justify-content: center;
 }
 
+.box{
+    text-align: center;
+    font: normal normal normal 17px/23px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
 .push{
     width: 30px;
     height: auto;
     opacity: 1;
     margin-left: auto;
-    padding-top: 10px;
 }
 
+/* UC-3 */
 .form{
     min-height: calc(100% - 80px);
     background-color: #f7f7f7;
@@ -149,12 +151,20 @@ label{
     opacity: 1;
 }
 
-.row-select{
+.row-content-select{
     display: flex;
     justify-content: space-between;
     
 }
-.select-text{
+
+.place{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    /* row-gap: 10em; */
+}
+
+select{
     width: 150px;
     padding: 8px;
     border: 1px solid #ccc;
@@ -168,84 +178,57 @@ label{
     background-color: transparent ;
 }
 
-
-.Select-option{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-/*UC 4 */
+/* UC-4 */
 error-output{
-    margin-left: 10px;
+    font-family: Roboto;
     font-size: 12px;
-    font-style: italic;
     color: red;
 }
 
-/* UC 5 */
-.button-content {
+/* UC-5 */
+.button{
+    cursor: pointer;
+}
+
+.submit-reset{
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.submitButton{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    font: normal normal normal 17px/23px Roboto;
+    color: #FFFFFF;
+    background: #008CFF 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    border: none;
+    opacity: 1;
+    margin-left: 290px;
+}
+
+.resetButton{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    font: normal normal normal 17px/23px Roboto;
+    letter-spacing: 0px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: #42515F;
+    opacity: 1;
+}
+
+.buttonParent{
     display: flex;
     margin-bottom: 10px;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10px;
 }
-.button {
-    font-size: 20px;
-    font-family: Roboto;
-    letter-spacing: 0px;
-    color: #42515f;
-    opacity: 1;
-    background: transparent;
-    border: none;
-    font-weight: 400;
-    min-width: 140px;
-    padding: 7px 7px;
-    border: 1px solid #707070;
-    cursor: pointer;
-}
-.submitButton {
-    border:#969696;
-    background-color: #e2e2e2;
-    margin-right: 10px;
-}
-.resetButton{
-    border:#969696;
-    background-color: #e2e2e2;
-    margin-right: 10px;
-}
-@media only screen and (max-width: 960px) {
-
-    .form {
-        width: 85%;
-        padding: 44px 20px;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .form {
-        margin-top: 10px;
-    }
-    .row {
-        flex-direction: column;
-    }
-    .uploadButton {
-        justify-content: flex-start;
-    }
-
-    .submit-reset {
-        width: 100%;
-        display: flex;
-        flex-grow: 1;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-    .submitButton {
-        margin: 0;
-    }
-    .button-content {
-        flex-direction: column-reverse;
-        align-items: flex-start;
-    }
-}
-

@@ -14,7 +14,7 @@ class AddressBook{
   get address(){return this._address;}
 
   set address(address){
-    let addressRegex = RegExp('^[A-Za-z]{2,}$');
+    let addressRegex = RegExp('^[a-zA-Z0-9_][a-zA-Z0-9_ ]{4,}$');
     if(addressRegex.test(address))
           this._address = address;
     else throw 'Address is not valid';

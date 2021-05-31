@@ -86,29 +86,11 @@ const createEmployeePayroll = () => {
         setTextValue('.text-error',e);
         throw e;
     }
-    try{
-        addressBookData.address = getInputValueById('#address');
-    }catch(e){
-        setTextValue('.text-error',e);
-        throw e;
-    }
-    try{
-        addressBookData.phone = getInputValueById('#phone');
-    }catch(e){
-        setTextValue('.text-error',e);
-        throw e;
-    }
-    try{
-        addressBookData.name = getInputValueById('#name');
-    }catch(e){
-        setTextValue('.text-error',e);
-        throw e;
-    }
-    try{
+
+    addressBookData.address = getInputValueById('#address');
+    addressBookData.phone = getInputValueById('#phone');
+    addressBookData.name = getInputValueById('#name');
     addressBookData.zip = getInputValueById('#zip');
-    }catch(e){
-        setTextValue('.text-error',e)
-    }
     addressBookData.city = getInputValueById('[name=city]');
     addressBookData.state = getInputValueById('[name=state]');
     

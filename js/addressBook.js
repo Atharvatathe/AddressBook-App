@@ -1,5 +1,11 @@
 class AddressBook{
 
+  //gettert and Settert for id
+  get id() {return this._id;}
+  set id(id){
+      this._id = id;
+  }
+  
   //getter and Settert for name
   get name() {return this._name;}
   

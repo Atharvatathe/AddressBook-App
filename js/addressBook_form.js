@@ -84,6 +84,7 @@ const createAddressBook = () => {
     addressBookData.city = getInputValuesById('#city');
     addressBookData.state = getInputValuesById('#state');
     addressBookData.zip = getInputValuesById('#zip');
+    addressBookData.id = Math.floor((Math.random() * 1000) + 1);
     alert(addressBookData.toString());
     return addressBookData;
 }
@@ -114,4 +115,9 @@ const resetForm = () => {
     setValue('#city','');
     setValue('#state','');
     setValue('#zip','');
+}
+
+const setTextValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
 }

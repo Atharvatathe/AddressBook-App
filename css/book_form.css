@@ -77,6 +77,7 @@ body{
 
 .box{
     text-align: center;
+    padding-left: 30%;
     font: normal normal normal 17px/23px Roboto;
     letter-spacing: 0px;
     color: #FFFFFF;
@@ -205,8 +206,8 @@ error-output{
     height: 40px;
     text-align: center;
     font: normal normal normal 17px/23px Roboto;
-    color: #FFFFFF;
-    background: #008CFF 0% 0% no-repeat padding-box;
+    color: #42515f;
+    background: #ccc 0% 0% no-repeat padding-box;
     border-radius: 4px;
     border: none;
     opacity: 1;

@@ -1,4 +1,3 @@
-// UC-12 
 let addressBookList;
 window.addEventListener('DOMContentLoaded', (event) => {
     // UC-13
@@ -25,7 +24,7 @@ const createInnerHTML = () => {
             <td>${addressBookData._phone}</td>
             <td>
             <img id="${addressBookData._id}" onclick="remove(this)" src="../assets/icons/delete-black-18dp.svg" alt="delete">
-            <img id="${addressBookData._id}" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="Edit">
+            <img id="${addressBookData._id}" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="edit">
             </td>
         </tr>`;
     }
@@ -39,13 +38,20 @@ const getAddressBookDataFromStorage = () => {
 
 //UC-14 remove details
 const remove = (node) => {
-    let addressBookData = addressBookList.find(personData => personData._id == node._id);
-    if(!addressBookData) return;
+    let addressBook = addressBookList.find(addData => addData._id == node.id);
+    if(!addressBook) return;
     const index = addressBookList
-                    .map(personData => personData._id)
-                    .indexOf(addressBookData._name);
+                    .map(addData => addData._id)
+                    .indexOf(addressBook._id);
     addressBookList.splice(index,1);
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
     document.querySelector(".person-count").textContent = addressBookList.length;
     createInnerHTML();
+}
+
+const update = (node) => {
+    let addressBook = addressBookList.find(addData => addData._id == node.id)
+    if(!addressBook) return;
+    localStorage.setItem('editperson', JSON.stringify(addressBook));
+    window.location.replace(site_properties.add_book_page);
 }

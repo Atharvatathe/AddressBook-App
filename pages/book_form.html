@@ -9,9 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/book_form.css">
     <title>Add Person</title>
-    <script defer src="../js/AddressBook.js"></script>
-    <script defer src="../js/addressBook_form.js"></script>
-    <Script src="../js/utility.js"></Script>
 </head>
 
 <body>
@@ -36,7 +33,7 @@
     </div>
     <!-- UC-3 -->
     <div class="form">
-        <form class="form-input" action="#" onreset="resetForm()" onsubmit="save()">
+        <form class="form-input" action="#" onreset="resetForm()" onsubmit="save(event); return false">
             <div class="row-content">
                 <label class="label-text" for="name">Full Name</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Your name..." required>
@@ -94,8 +91,10 @@
     </div>
     </form>
     </div>
-    
 
+    <script defer src="../js/AddressBook.js"></script>
+    <script defer src="../js/addressBook_form.js"></script>
+    <Script src="../js/utility.js"></Script>
 </body>
 
 </html>

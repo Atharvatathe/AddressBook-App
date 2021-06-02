@@ -25,7 +25,7 @@ const createInnerHTML = () => {
             <td>${addressBookData._phone}</td>
             <td>
             <img id="${addressBookData._id}" onclick="remove(this)" src="../assets/icons/delete-black-18dp.svg" alt="delete">
-            <img id="${addressBookData._id}" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="edit">
+            <img id="${addressBookData._id}" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="Edit">
             </td>
         </tr>`;
     }
@@ -37,13 +37,13 @@ const getAddressBookDataFromStorage = () => {
     return localStorage.getItem('AddressBookList') ? JSON.parse(localStorage.getItem('AddressBookList')) : [];
 }
 
-//UC14
+//UC-14 remove details
 const remove = (node) => {
-    let addressBookData = addressBookList.find(addData => addData._id == node.id);
-    if (!addressBookData) return;
+    let addressBookData = addressBookList.find(personData => personData._id == node._id);
+    if(!addressBookData) return;
     const index = addressBookList
-                  .map(addData => addData._id)
-                  .indexOf(addressBookData._name);
+                    .map(personData => personData._id)
+                    .indexOf(addressBookData._name);
     addressBookList.splice(index,1);
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
     document.querySelector(".person-count").textContent = addressBookList.length;

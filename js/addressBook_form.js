@@ -1,3 +1,8 @@
+//UC15 Update person Details
+let isUpdate = false;
+let addressBookObj = {};
+
+
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
@@ -58,6 +63,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
             zipError.textContent = e;
         }
     });
+
+    checkForUpdate();
 });
 
 // UC-6
@@ -84,8 +91,7 @@ const createAddressBook = () => {
     addressBookData.city = getInputValuesById('#city');
     addressBookData.state = getInputValuesById('#state');
     addressBookData.zip = getInputValuesById('#zip');
-    addressBookData.id = Math.floor((Math.random() * 1000) + 1);
-    alert(addressBookData.toString());
+   alert(addressBookData.toString());
     return addressBookData;
 }
 
@@ -118,6 +124,29 @@ const resetForm = () => {
 }
 
 const setTextValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
+}
+
+//UC15 Update person Details
+const checkForUpdate = () => {
+    const addressBookJson = localStorage.getItem('editperson');
+    isUpdate = addressBookJson ? true : false;
+    if(!isUpdate) return;
+    addressBookObj = JSON.parse(addressBookJson);
+    setForm();
+}
+
+const setForm = () => {
+    setValue('#name', addressBookObj._name);
+    setValue('#phone', employeePayrollObj._phone);
+    setValue('#address', employeePayrollObj._address);
+    setValue('#city', employeePayrollObj._city);
+    setValue('#state', employeePayrollObj._state);
+    setValue('#zip', employeePayrollObj._zip);
+}
+
+const setValue = (id, value) => {
     const element = document.querySelector(id);
     element.textContent = value;
 }

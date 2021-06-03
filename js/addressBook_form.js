@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
         try {
-            (new AddressBook()).name = name.value;;
+            checkName(name.value);
             textError.textContent = "";
         } catch (e) {
             textError.textContent = e;
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
         try {
-            (new AddressBook()).phone = phone.value;;
+            checkPhone(phone.value);
             phoneError.textContent = "";
         } catch (e) {
             phoneError.textContent = e;
@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
         try {
-            (new AddressBook()).address = address.value;;
+            checkAddress(address.value);
             addressError.textContent = "";
         } catch (e) {
             addressError.textContent = e;
@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
         try {
-            (new AddressBook()).zip = zip.value;;
+            checkZip(zip.value);
             zipError.textContent = "";
         } catch (e) {
             zipError.textContent = e;
@@ -104,7 +104,7 @@ const setValue = (id, value) => {
     element.value = value;
 }
 
-// // UC-6 // UC-16
+//UC16
 const save = (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -116,6 +116,9 @@ const save = (event) => {
 }
 
 function setAddressBookObject() {
+    if(!isUpdate && site_properties.use_local_storage.match("true")){
+        addressBookObj.id = createNewAddressBookId();
+    }
     addressBookObj._name = getInputValuesById('#name');
     addressBookObj._phone = getInputValuesById('#phone');
     addressBookObj._address = getInputValuesById('#address');
@@ -128,17 +131,17 @@ function setAddressBookObject() {
 const createAndUpdateStorage = () => {
     let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
     if(addressBookList){
-        let addressBookData = addressBookList.find(addData => addData._id == addressBookObj._id);
+        let addressBookData = addressBookList.find(addData => addData.id == addressBookObj.id);
         if(!addressBookData){
             addressBookList.push(createAddressBookData());
         }
         else{
-            const index = addressBookList.map(addData => addData._id).indexOf(addressBookData._id);
-            addressBookList.splice(index, 1, createAddressBookData(addressBookData._id));
+            const index = addressBookList.map(addData => addData.id).indexOf(addressBookData.id);
+            addressBookList.splice(index, 1, createAddressBookData(addressBookData.id));
         }
     }
     else{
-        addressBookList = [createAddressBookData()];
+        addressBookList = [addressBookObj];
     }
     localStorage.setItem("AddressBookList",JSON.stringify(addressBookList));
 }

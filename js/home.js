@@ -55,3 +55,10 @@ const update = (node) => {
     localStorage.setItem('editperson', JSON.stringify(addressBook));
     window.location.replace(site_properties.add_book_page);
 }
+
+const stringifyDate = (date)=>{
+    const options = {year :'numeric', month:'short', day:'numeric'}
+    const newDate = !date ? "undefined" :
+                    new Date(Date.parse(date)).toLocaleDateString('en-GB',options);
+    return newDate;
+}
